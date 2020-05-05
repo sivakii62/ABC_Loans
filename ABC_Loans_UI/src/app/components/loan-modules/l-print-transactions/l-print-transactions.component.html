@@ -1,0 +1,41 @@
+    <h2>
+        <div class="text-center font-weight-bold" style="padding: 0.5%;color: black;background-color: rgb(178, 207, 71);">PassBook </div>
+    </h2>
+  <br>
+
+    <div class="container"> 
+    <table class="table-responsive">
+        <colgroup>
+            <col span="1" style="width: 5%;">
+            <col span="1" style="width: 22%;">
+            <col span="1" style="width: 40%;">
+            <col span="1" style="width: 33%;">
+         </colgroup>
+    <thead>
+        <tr>
+            <th>S.No</th>
+            <th>Transaction ID</th>
+            <th>Transaction</th>
+            <th>Date and Time</th>
+        </tr>
+    </thead>
+</table>
+<div class="inner_table">
+    <table class="table-striped table-dark">
+        <colgroup>
+            <col span="1" style="width: 2%;">
+            <col span="1" style="width: 21%;">
+            <col span="1" style="width: 52%;">
+            <col span="1" style="width: 25%;">
+         </colgroup>
+    <tbody class="inner_table">
+        <tr *ngFor="let t of trans;index as i">
+            <td>{{i+1}}</td>
+            <td>{{t.tid}}</td>
+            <td>{{t.transaction}}</td>
+            <td>{{t.dt}}</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+</div>

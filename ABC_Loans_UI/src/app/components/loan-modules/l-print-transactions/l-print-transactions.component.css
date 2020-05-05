@@ -1,0 +1,26 @@
+  table {
+    text-align: center;
+    position: relative;
+    border-collapse: collapse; 
+  }
+  td {
+    height: 115px;
+    width: 260px;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 20px;
+  }
+  th {
+    height: 80px;
+    width: 260px;
+    text-align: center;
+    background: burlywood;
+    position: sticky;
+    font-size: 25px;
+    font-family: Georgia;
+    box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);
+  }
+  .inner_table {
+    height: 350px;
+    overflow-y: auto;
+}

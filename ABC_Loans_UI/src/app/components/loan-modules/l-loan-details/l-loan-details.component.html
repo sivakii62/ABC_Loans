@@ -1,0 +1,28 @@
+  <h2>
+      <div class="text-center font-weight-bold" style="padding: 0.5%;color: black;background-color: rgb(178, 207, 71);">Loan Details </div>
+  </h2>
+
+
+    <div class="container" style="margin-top: 50px;width: 45%;">
+      <div class="form-group row">
+        <label for="loanAmt" class="col-lg-5"><b>Loan Amount </b></label>
+        <input type="number" class="form-control col-lg-5"  readonly="readonly" value="{{lacc?.loanAmt}}"/>
+      </div><br>
+      <div class="form-group row">
+        <label for="assetVal" class="col-lg-5"><b>Asset Value </b></label>
+        <input type="number" class="form-control col-lg-5"  readonly="readonly" value="{{lacc?.assetVal}}"/>
+      </div><br>
+      <div class="form-group row">
+        <label for="time" class="col-lg-5"><b>Tenure Period</b></label>
+        <input type="number" class="form-control col-lg-5"  readonly="readonly" value="{{lacc?.time}}"/>
+      </div><br>
+      <div class="form-group row">
+        <label for="loanType" class="col-lg-5"><b>Loan Type </b></label>
+        <input type="text" class="form-control col-lg-5"  disabled="disabled" value="{{lacc?.loanType}}"/>
+      </div><br>
+      <div class="row" style="margin-top:25px;">
+        <h4>Note : </h4>&nbsp;&nbsp;
+        <h5 style="margin-top:4px;">Cannot apply Loan. Already a Loan exists in your Account, <br> for Further details -&nbsp;<a routerLink="/terms"> Terms & Conditions</a>.</h5>
+      </div><br>
+      </div>
+    

@@ -1,0 +1,33 @@
+<html>
+<nav class="navbar navbar-expand-md navbar-light" style="background-color: lavender;">
+    <a  class="navbar-brand" style="font-size: 25px;">ABC Loans</a>
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+        <div class="navbar-nav">
+            <button class="text-left btn btn btn-sm" (click)="home()">Home</button>
+            <a routerLink="/loanModules/lhome"class="nav-item nav-link"><button class="btn btn-sm">Profile</button></a>
+            <div class="nav-item dropdown">
+                <a  class="nav-link dropdown-toggle" data-toggle="dropdown"><button class="col-lg-12 btn btn-sm btn-outline-dark"> &#9776;&nbsp; Menu</button></a>
+                <div class="dropdown-menu">
+                    <a  class="dropdown-item"> <button class="btn btn" (click)="loanEligibility()">Apply Loan</button></a>
+                    <a routerLink="/loanModules/showBal" class="dropdown-item"><button class="btn btn"> Check Balance</button></a>
+                    <a routerLink="/loanModules/calcEmi" class="dropdown-item"><button class="btn btn">Calculate EMI</button></a>
+                    <a routerLink="/loanModules/payEmi" class="dropdown-item"><button class="btn btn">Pay EMI</button></a>
+                    <a routerLink="/loanModules/foreclose" class="dropdown-item"><button class="btn btn">Foreclose</button></a>
+                    <a routerLink="/loanModules/printTransactions" class="dropdown-item"><button class="btn btn">Print Transactions</button></a>
+                </div>
+            </div>
+        </div>
+       
+        <div class="navbar-nav">
+            <button class="btn btn-outline-dark" (click)="logout()">Log Out</button>
+        </div>
+    </div>
+</nav>
+<div>
+    <router-outlet></router-outlet>
+</div>
+</html>

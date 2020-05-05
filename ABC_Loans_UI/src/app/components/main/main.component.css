@@ -1,0 +1,13 @@
+.headerbutton{
+    color: black;
+    font-weight: 500;
+  }
+  .headerbutton:hover{
+    color: whitesmoke;
+    font-weight: 500;
+  }
+  .sticky {
+    position: relative;
+    width: 100%;
+  }
+ 

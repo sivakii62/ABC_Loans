@@ -1,0 +1,37 @@
+ <h2>
+        <div class="text-center font-weight-bold" style="padding: 0.5%;color: black;background-color: rgb(178, 207, 71);">Pay EMI &nbsp;&nbsp; </div>
+    </h2>
+
+<div class="container" style="width: 90%;">
+    <div class="row offset-lg-1" style="margin-top: 15px;">
+        <button class="btn btn-success btdisable" >
+            <img src='assets\pemi.jpg' width="300" height="200">
+        </button>
+        <div class="offset-lg-1" style="margin-top: 25px;">
+            <h5>
+                <li>Make sure that your account has a pending Loan to Pay EMI.</li><br>
+                <li>Make sure that your account has a Sufficient balance to Pay EMI.</li>
+            </h5>
+        </div>
+        <div class="row offset-lg-3" style="margin-top: 2.5%;">
+            <div class="form-group">
+                <label for="emi" class="col-lg-5"><b>EMI Amount</b></label>
+                <input type="number" class="col-lg-5 form-control" readonly="readonly" value={{emi}}/>
+              </div>
+              <div class="form-group">
+                <label for="emisLeft" class="col-lg-5"><b>EMIs Left</b></label>
+                <input type="number" class="col-lg-5 form-control" readonly="readonly" value={{emisLeft}}/>
+              </div>
+        </div>
+        <h3 class="offset-lg-2">
+            <br>
+            Click the below button to PAY EMI &nbsp;&nbsp;
+            <i class="fa fa-hand-o-down" style="font-size:40px;color:green"></i>
+        </h3>
+    </div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;
+        <button class="btn btn-success offset-lg-7" style="width: 100px;margin-top: 5px;" (click)="button()">
+            PAY EMI
+        </button>
+    </div>
+</div>

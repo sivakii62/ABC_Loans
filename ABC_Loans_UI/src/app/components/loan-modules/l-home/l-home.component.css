@@ -1,0 +1,14 @@
+td{
+    height: 125px;
+    width: 600px;
+    text-align: center;
+    font-family: 'Segoe UI';
+    font-size: x-large;
+    padding-top: 45px;
+}
+th{
+    font-family: Arial;
+    font-size: larger;
+    padding-top: 45px;
+    background-color: honeydew;
+}

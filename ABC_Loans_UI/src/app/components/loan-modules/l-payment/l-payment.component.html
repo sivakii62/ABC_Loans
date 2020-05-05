@@ -1,0 +1,22 @@
+<h2>
+    <div class="text-center font-weight-bold" style="padding: 0.5%;color: black;background-color: rgb(178, 207, 71);">Payment Interface &nbsp;&nbsp; </div>
+</h2>
+<br>
+<form [formGroup]="paymentForm" (ngSubmit)="pay()" style="margin-top: 80px;">
+    <div class="form-group row offset-lg-2">
+        <label for="transPassword" class="col-lg-3 text-right" style="margin-top: 7px;"><b>Transaction Password <span class="text-danger">*</span></b></label>
+        <div class="col-lg-8">
+            <input type="password" class="form-control" formControlName="transPassword" placeholder="Enter Transaction Password">
+
+            <div class="error" *ngIf="submitted && signUpForm.controls.transPassword.errors">
+                <div class="text-danger" *ngIf="signUpForm.controls.transPassword.errors.required">
+                    *Transaction Password is Required..!!
+                </div>
+            </div>
+        </div>
+</div>
+<div class="offset-lg-7">
+    <button class="btn btn-success" type="submit"> {{msg}} &nbsp;{{amount | currency:'INR'}}</button>
+</div>
+</form>
+<br><br><br><br>

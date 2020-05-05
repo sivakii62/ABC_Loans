@@ -1,0 +1,25 @@
+  <h2>
+      <div class="text-center font-weight-bold" style="padding: 0.5%;color: black;background-color: rgb(178, 207, 71);">Deposit </div>
+  </h2>
+<br><br>
+<div class="container" style="width:40%">
+<form [formGroup]="depositForm" (ngSubmit)="addAmt()" >
+    <br>
+    <div class="form-group row offset-md-1">
+      <label for="amount" class="col-lg-3 text-right" style="margin-top: 5px;"><b>Amount <span class="text-danger">*</span></b></label>
+      <input type="number" class="col-lg-5 form-control" formControlName="amount" placeholder="Enter the Amount"/>
+      <div class="text-danger" *ngIf="submitted && depositForm.controls.amount.errors">
+        &nbsp; *Amount is Required..!!
+      </div>
+    </div>
+
+    <br>
+      <button class="btn btn-success btn-block" type="submit">Deposit</button>
+      <br><br>
+    
+    <div class="container" style="background-color:#f1f1f1;padding: 1.5%;">
+      <button class="btn btn-warning" type="reset" (click)="back()"> Back</button>&nbsp;&nbsp;
+      <button class="btn btn-danger" type="reset" > Cancel</button>
+    </div>
+</form>
+</div>

@@ -1,0 +1,21 @@
+<h2>
+    <div class="text-center font-weight-bold" style="padding: 0.5%;color: black;background-color: rgb(178, 207, 71);">
+      Edit Profile &nbsp;&nbsp; </div>
+  </h2>
+<br><br>
+<form [formGroup]="editForm" (ngSubmit)="edit()">
+      <div class="form-group row">
+        <label for="name" class="col-lg-4 text-right" style="margin-top: 7px;"><b>Name: </b></label>
+        <input type="text" class="form-control col-lg-3" formControlName="name" />
+      </div> 
+      <div class="form-group row">
+        <label for="email" class="col-lg-4 text-right" style="margin-top: 7px;"><b>Email: </b></label>
+        <input type="text" class="form-control col-lg-3" formControlName="email" />
+      </div> 
+      <div class="form-group row">
+        <label for="mobNum" class="col-lg-4 text-right" style="margin-top: 7px;"><b>Mobile Number: </b></label>
+        <input type="number" class="form-control col-lg-3" formControlName="mobNum" />
+      </div>  
+      <br>
+<button class="btn btn-primary btn-lg offset-lg-7" type="submit">Save</button>
+</form>

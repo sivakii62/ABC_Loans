@@ -1,0 +1,33 @@
+    <h2>
+        <div class="text-center font-weight-bold" style="padding: 0.5%;color: black;background-color: rgb(178, 207, 71);">Foreclose &nbsp;&nbsp; </div>
+    </h2>
+
+  <div class="container" style="width: 90%;">
+    <div class="row offset-lg-1" style="margin-top: 15px;">
+        <button class="btn btn-warning btdisable" >
+            <img src='assets\fc.jpg' width="280" height="190">
+        </button>&nbsp;&nbsp;&nbsp;&nbsp;
+        <div style="margin-top: 25px;">
+            <h5>
+                <li>Make sure that your account has a pending Loan to Foreclose the Loan.</li><br>
+                <li>Make sure that your account has a Sufficient balance to Foreclose the Loan.</li>
+            </h5>
+        </div>
+        
+            <div class="form-group offset-lg-3" style="margin-top: 2.5%;">
+                <label for="emi" class="col-lg-7"><b>Loan Account Balance</b></label>
+                <input type="number" class="col-lg-7 form-control" readonly="readonly" value={{loanAccbal}}/>
+              </div>
+        
+        <h3 class="offset-lg-2">
+            <br>
+            Click the below button to Foreclose &nbsp;&nbsp;&nbsp;
+            <i class="fa fa-hand-o-down" style="font-size:40px;color:orange"></i>
+        </h3>
+    </div>
+    <div>
+        <button class="btn btn-warning offset-lg-8" style="width: 100px;margin-top: 5px;" (click)="button()">
+            Foreclose
+        </button>
+    </div>
+</div>

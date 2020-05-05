@@ -1,0 +1,190 @@
+<div class="container-fluid" style="background-color: rgb(178, 207, 71);padding: 0.8%">
+    <h2>
+        <div class="text-center font-weight-bold" style="color: black;margin-top: 10px;">SignUp &nbsp;&nbsp; </div>
+    </h2>
+</div>
+
+<div class="jumbotron" style="background-color: white;height: 75%;margin-top: 10px;">
+    <form [formGroup]="signUpForm" (ngSubmit)="addUser()">
+        <div class="form-group row">
+                <label for="firstName" class="col-lg-4 text-right font-weight-bold">First Name :</label>
+                <div class="col-lg-8">
+                    <input type="text" class="form-control" formControlName="firstName" placeholder="Your First Name">
+                    <div class="error" *ngIf="submitted && signUpForm.controls.firstName.errors">
+                        <div class="text-danger" *ngIf="signUpForm.controls.firstName.errors.required">
+                            *First Name is Required..!!
+                        </div>
+                        <div class="text-danger" *ngIf="signUpForm.controls.firstName.errors.pattern">
+                            *First Name must begin with capital letter, should be of characters and maximum of 12 characters..!!
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+    
+            <div class="form-group row">
+                <label for="lastName" class="col-lg-4 text-right font-weight-bold">Last Name :</label>
+                <div class="col-lg-8">
+                    <input type="text" class="form-control" formControlName="lastName" placeholder="Your Last Name">
+    
+                    <div class="error" *ngIf="submitted && signUpForm.controls.lastName.errors">
+                        <div class="text-danger" *ngIf="signUpForm.controls.lastName.errors.required">
+                            *Last Name is Required..!!
+                        </div>
+                        <div class="text-danger" *ngIf="signUpForm.controls.lastName.errors.pattern">
+                            *Last Name should be of characters and maximum of 12 characters..!!
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group row">
+                <label for="email" class="col-lg-4 text-right font-weight-bold">Email :</label>
+                <div class="col-lg-8">
+                    <input type="text" class="form-control" formControlName="email" placeholder="Enter Email">
+    
+                    <div class="error" *ngIf="submitted && signUpForm.controls.email.errors">
+                        <div class="text-danger" *ngIf="signUpForm.controls.email.errors.required">
+                            *Email is Required..!!
+                        </div>
+                        <div class="text-danger" *ngIf="signUpForm.controls.email.errors.email">
+                            *Invalid Email ID..!!
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+            <div class="form-group row">
+                    <label for="mobileNumber" class="col-lg-4 text-right font-weight-bold">Mobile Number :</label>
+                    <div class="col-lg-8">
+                        <input type="text" class="form-control" formControlName="mobileNumber" maxlength="10" placeholder="Mobile Number">
+        
+                        <div class="error" *ngIf="submitted && signUpForm.controls.mobileNumber.errors">
+                            <div class="text-danger" *ngIf="signUpForm.controls.mobileNumber.errors.required">
+                                *Mobile Number is Required..!!
+                            </div>
+                            <div class="text-danger" *ngIf="signUpForm.controls.mobileNumber.errors.pattern">
+                                *Invalid Mobile Number, Mobile Number should be of 10 digits..!!
+                            </div>
+                        </div>
+                    </div>
+            </div>
+
+            <div class="form-group row">
+                    <label for="iDeposit" class="col-lg-4 text-right font-weight-bold">Initial Deposit :</label>
+                    <div class="col-lg-8">
+                        <input type="number" class="form-control" formControlName="iDeposit" placeholder="Initial Deposit">
+        
+                        <div class="error" *ngIf="submitted && signUpForm.controls.iDeposit.errors">
+                            <div class="text-danger" *ngIf="signUpForm.controls.iDeposit.errors.required">
+                                *Initial Deposit is Required..!!
+                            </div>
+                            <div class="text-danger" *ngIf="signUpForm.controls.iDeposit.errors.min">
+                                *Minimum balance should be of Rs.1000..!!
+                            </div>
+                        </div>
+                    </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="userName" class="col-lg-4 text-right font-weight-bold">User Name :</label>
+                <div class="col-lg-8">
+                    <input type="text" class="form-control" formControlName="userName" placeholder="Enter User Name">
+    
+                    <div class="error" *ngIf="submitted && signUpForm.controls.userName.errors">
+                        <div class="text-danger" *ngIf="signUpForm.controls.userName.errors.required && submitted">
+                            *User Name is Required..!!
+                        </div>
+                        <div class="text-danger" *ngIf="signUpForm.controls.userName.errors.pattern && submitted">
+                            *User Name should be of characters and maximum of 10 characters..!!
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+            <div class="form-group row">
+                    <label for="password" class="col-lg-4 text-right font-weight-bold">Create New Password :</label>
+                    <div class="col-lg-8">
+                        <input type="password" class="form-control" formControlName="password" placeholder="Enter Password">
+        
+                        <div class="error" *ngIf="submitted && signUpForm.controls.password.errors">
+                            <div class="text-danger" *ngIf="signUpForm.controls.password.errors.required">
+                                *Password is Required..!!
+                            </div>
+                            <div class="text-danger" *ngIf="signUpForm.controls.password.errors.pattern">
+                                *Password should have at least one lowercase,one uppercase,one number, <br> one special character and should have length of 6 to 20..!!
+                            </div>
+                        </div>
+                    </div>
+            </div>
+
+            <div class="form-group row">
+                    <label for="confirmpassword" class="col-lg-4 text-right font-weight-bold">Re-enter Password  :</label>
+                    <div class="col-lg-8">
+                        <input type="password" class="form-control" formControlName="confirmpassword" placeholder="Re-enter Password">
+        
+                        <div class="error" *ngIf="submitted && signUpForm.controls.confirmpassword.errors">
+                            <div class="text-danger" *ngIf="signUpForm.controls.confirmpassword.errors.required">
+                            *Please Re-enter the Password..!!
+                            </div>
+                        </div>
+                        <div class="text-danger" *ngIf="signUpForm.errors?.passwordNotMatch" style="margin-top: 2px;">
+                            *Passwords must match..!!
+                        </div>
+                    </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="transPassword" class="col-lg-4 text-right font-weight-bold">Create Transaction Password :</label>
+                <div class="col-lg-8">
+                    <input type="password" class="form-control" formControlName="transPassword" placeholder="Enter Transaction Password">
+    
+                    <div class="error" *ngIf="submitted && signUpForm.controls.transPassword.errors">
+                        <div class="text-danger" *ngIf="signUpForm.controls.transPassword.errors.required">
+                            *Transaction Password is Required..!!
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="confirmTransPassword" class="col-lg-4 text-right font-weight-bold">Re-enter Transaction Password  :</label>
+            <div class="col-lg-8">
+                <input type="password" class="form-control" formControlName="confirmTransPassword" placeholder="Re-enter Transaction Password">
+
+                <div class="error" *ngIf="submitted && signUpForm.controls.confirmTransPassword.errors">
+                    <div class="text-danger" *ngIf="signUpForm.controls.confirmTransPassword.errors.required">
+                    *Please Re-enter the Transaction Password..!!
+                    </div>
+                </div>
+                <div class="text-danger" *ngIf="signUpForm.errors?.transPasswordNotMatch" style="margin-top: 2px;">
+                    *Transaction Passwords must match..!!
+                </div>
+            </div>
+    </div>
+
+            <br>
+    <div class="offset-lg-7">
+        <button class="btn btn-outline-success" type="submit">  Sign Up </button>&nbsp;
+    </div>
+
+    <!-- <div class="row col-lg-4 text-danger font-weight-bold" *ngIf="!submitted && !accCreation" style="margin-left: 450px;margin-top:-20px;position: fixed;">
+        This User Name already Exists,Please change the User Name..!!
+    </div>
+    <div class="text-danger" *ngIf="!submitted && !accCreation" style="margin-left: 990px;margin-top: -205px;position: fixed;">
+        *Please change the User Name..!!
+    </div> -->
+</form>
+
+        <br>
+        <div class="card-footer">
+            <div class="d-flex justify-content-center links">
+               Do you have an account?
+                <span class="offset-lg-1"></span>
+                <button class="btn btn-outline-info" style="padding: 0.2px 10px" (click)="login()">Login</button>&nbsp;&nbsp;
+                <button class="mybutton" style="padding: 4.5px 10px" (click)="home()">Go back to home</button>
+        </div>
+
+    </div>
+
+</div>

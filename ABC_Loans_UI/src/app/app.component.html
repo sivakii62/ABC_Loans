@@ -1,0 +1,14 @@
+<div>
+    <router-outlet></router-outlet>
+</div>
+<footer>
+    <div class="row">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="col-lg-5 text-danger font-weight-bold">
+            <!-- built in pipe for date -->
+            This site is copyright &copy; to ABC Bank {{todaysDate|date:'yyyy'}}.
+        </div>
+        <div class="offset-lg-4 col-lg-2 font-weight-bold text-info">
+            {{todaysDate|date:'medium'}}
+        </div>
+    </div>
+</footer>

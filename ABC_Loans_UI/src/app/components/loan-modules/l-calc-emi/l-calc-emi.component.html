@@ -1,0 +1,65 @@
+<h2>
+  <div class="text-center font-weight-bold" style="padding: 0.5%;color: black;background-color: rgb(178, 207, 71);">
+    Calculate EMI &nbsp;&nbsp; </div>
+</h2>
+
+<div>
+  <div>
+    <form [formGroup]="calcEmiForm" (ngSubmit)="calcEMI()">
+      <div class="container">
+        <div class="form-group row">
+          <label for="loanAmt" class="col-lg-5"><b>Loan Amount </b></label>
+          <input type="number" class="form-control col-lg-5" formControlName="loanAmt" />
+        </div>
+        <div *ngIf="calcEmiForm.controls.loanAmt.errors">
+          <div class="text-danger error" *ngIf="s && calcEmiForm.controls.loanAmt.errors.required">
+            *Loan Amount is required..!!<br>
+          </div>
+          <div class="text-danger error" *ngIf="s && calcEmiForm.controls.loanAmt.errors.min">
+            *Loan Amount is required..!!<br>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="time" class="col-lg-5"><b>Tenure Period</b></label>
+          <input type="number" class="form-control col-lg-5" formControlName="time" />
+        </div>
+        <div *ngIf="calcEmiForm.controls.time.errors">
+          <div class="text-danger error" *ngIf="s && calcEmiForm.controls.time.errors.required">
+            *Tenure Period is required..!!<br>
+          </div>
+          <div class="text-danger error"
+            *ngIf="s && (calcEmiForm.controls.time.errors.min || calcEmiForm.controls.time.errors.max)">
+            *Tenure Period must be from 1 to 5 years..!!<br>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="loanType" class="col-lg-5"><b>Loan Type </b></label>
+          <select id="loanType" type="text" class="form-control col-lg-5" formControlName="loanType">
+            <option value="" hidden selected></option>
+            <option value="Home">Home</option>
+            <option value="Educational">Educational</option>
+            <option value="Vehicle">Vehicle</option>
+            <option value="Personal">Personal</option>
+          </select>
+        </div>
+        <div *ngIf="calcEmiForm.controls.loanType.errors">
+          <div class="text-danger error" *ngIf="s && calcEmiForm.controls.loanType.errors.required">
+            *Loan Type is required..!! <br>
+          </div>
+        </div>
+        <br>
+        <button class="btn btn-primary btn-lg btn-block" style="margin:auto" type="submit">Calculate EMI</button>
+        <br><br>
+        <div class="container" style="background-color:#f1f1f1">
+          <button type="button" class="btn btn-danger cancelbtn" type="reset" (click)="onReset()">Reset</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>
+<br><br>
+<div class="offset-lg-2">
+  <pre *ngIf="msg"
+    style="color: green;font-family:'Times New Roman';font-size: x-large;">   Your Calculated EMI is Rs: {{EMI|currency:'INR'}} /-</pre>
+</div>
